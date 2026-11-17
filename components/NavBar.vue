@@ -16,6 +16,12 @@
 
     <div v-if="showTools" class="tools-dropdown">
       <router-link
+        to="/tools/passkeymanagement/"
+        @click="closeTools"
+        class="dropdown-item"
+        >Passkey Management</router-link
+      >
+      <router-link
         to="/tools/aplocator/"
         @click="closeTools"
         class="dropdown-item"
@@ -136,7 +142,7 @@ function closeTools() {
   border: 1px solid #ccc;
   border-radius: 6px;
   padding: 0.5rem 0;
-  min-width: 140px;
+  min-width: 180px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   z-index: 100;
 }

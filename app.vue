@@ -4,7 +4,7 @@
     <main class="content">
       <NuxtPage />
     </main>
-    <footer class="recaptcha-notice">
+    <footer v-if="showRecaptchaNotice" class="recaptcha-notice">
       <div class="content-container">
         This site is protected by reCAPTCHA and the Google
         <a
@@ -29,7 +29,13 @@
 </template>
 
 <script lang="ts" setup>
+import { computed } from "vue";
 import NavBar from "@/components/NavBar.vue";
+
+const route = useRoute();
+const showRecaptchaNotice = computed(
+  () => !route.path.startsWith("/tools/passkeymanagement"),
+);
 </script>
 
 <style>
